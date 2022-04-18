@@ -16,12 +16,12 @@ def write_csv(logtype, ct):
         f = open(path,'a')
         writer = csv.writer(f)
 
-        if(logtype == 'record'):
+        if(logtype == 'mic'):
             row = [datetime.fromtimestamp(ct), str(ct)+'-recording.wav',\
             '{0:.2f}'.format(data["temp"]), '{0:.2f}'.format(data["hum"])]
         elif(logtype == 'camera'):
             row = [datetime.fromtimestamp(ct), str(ct) + '-video.h264']
-        elif(logtype == 'vibration'):
+        elif(logtype == 'motor'):
             row = [datetime.fromtimestamp(ct),'vibration activated']
         elif(logtype == 'fan'):
             row = [datetime.fromtimestamp(ct),'fan activated']

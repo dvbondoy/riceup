@@ -3,6 +3,8 @@ import configparser
 import schedule
 import motor
 import mic
+import fan
+import lights
 
 config = configparser.ConfigParser()
 config.read('config.ini')

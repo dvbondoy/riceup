@@ -34,7 +34,7 @@ def record():
         logs.write_log(e)
 
     #csv log
-    csvlog.write_csv()
+    csvlog.write_csv('mic',ct)
 
     #log
     # logging.info('Record End: %s', datetime.now())

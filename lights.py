@@ -1,0 +1,2 @@
+def toggle():
+    #do something

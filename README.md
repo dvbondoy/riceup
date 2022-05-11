@@ -5,8 +5,9 @@ A research about rice bug detection.
 1. Update raspberry pi  
 `sudo apt update && sudo apt upgrade -y`
 
-2. Install pip3  
+2. Install pip3 and camera  
 `sudo apt install python3-pip -y`
+`sudo apt-get install python-picamera python3-picamera`
 
 3. Download and install raspi-blinka  
 `wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py`  
@@ -21,8 +22,8 @@ A research about rice bug detection.
 
 6. Install requirements  
 `cd riceup`  
-`pip install -r requirements.txt`  
+`pip3 install -r requirements.txt`  
 
-7. Setup your settings in config.ini file
-8. Run `python main.py`  
+7. Configure settings in `config.ini` 
+8. Run `python main.py` or `./main.py`
 

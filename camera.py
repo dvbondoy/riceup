@@ -1,22 +1,20 @@
 from picamera import PiCamera
-from time import sleep
+import time
 import configparser
-from helpers import csvlog
+#from helpers import csvlog
 
 config = configparser.ConfigParser()
 config.read('config.ini')
-path = config["CAMERA"]["path"]
-duration = config["CAMERA"]["duration"]
+path = config["CAMERA"]["vids_path"]
 ct = time.time()
 
 camera = PiCamera()
 
 def capture_vid():
     #camera.start_preview()
-    #log it first
-    csvlog.write_csv('camera', ct)
+    #csvlog.write_csv('camera', ct)
+    camera.start_recording(path + str(ct) + '-video.h264')
 
-    camera.start_recording(config['CAMERA']['path']+ str(ct) + '-video.h264')
-    sleep(duration)
+def capture_stop():
     camera.stop_recording()
     #camera.stop_preview()

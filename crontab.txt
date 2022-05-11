@@ -1,0 +1,1 @@
+@reboot /usr/bin/python /home/pi/riceup/main.py > /home/pi/riceup/logs/main.log 2>&1

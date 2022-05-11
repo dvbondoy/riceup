@@ -1,16 +1,40 @@
-import RPi.GPIO as GPIO
-import time
+"""
+WIRINGS
 
-pin = 18
+Raspberry to Relay:
+    GPIO 24 ==> in
+    5v ==> vcc
+    Gnd ==> Gnd
 
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD)
-GPIO.setup(pin, GPIO.OUT)
+Relay:
+    NO ==> Fan positive(+)
+    COM ==> PSU positive(+)
+
+Fan:
+    negative ==> PSU negative(-)
+
+Author:caling/jun
+"""
+#import RPi.GPIO as GPIO
+import gpiozero
+
+#pin = 18
+RELAY_FAN = 24
+
+fan = gpiozero.OutputDevice(RELAY_FAN,active_high=False, initial_value=True)
+
+#GPIO.setwarnings(False)
+#GPIO.setmode(GPIO.BOARD)
+#GPIO.setup(pin, GPIO.OUT)
 
 def fan_off():
-    GPIO.output(pin, GPIO.HIGH)
     print('fan off')
+    #GPIO.output(pin, GPIO.HIGH)
+    fan.off()
 
 def fan_on():
-    GPIO.output(pin, GPIO.LOW)
     print('fan on')
+    #GPIO.output(pin, GPIO.LOW)
+    fan.on()
+
+fan_off()

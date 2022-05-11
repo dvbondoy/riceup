@@ -23,6 +23,6 @@ A research about rice bug detection.
 `cd riceup`  
 `pip install -r requirements.txt`  
 
-7. Setup config.ini  
+7. Setup your settings in config.ini file
 8. Run `python main.py`  
 

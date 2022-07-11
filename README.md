@@ -22,8 +22,12 @@ A research about rice bug detection.
 
 6. Install requirements  
 `cd riceup`  
-`pip3 install -r requirements.txt`  
+`pip3 install -r requirements.txt`
 
-7. Configure settings in `config.ini` 
-8. Run `python main.py` or `./main.py`
+7. Copy 'asoundrc' to /home/pi and rename it to '.asoundrc'.
+`cp asoundrc /home/pi && mv /home/pi/asoundrc /home/pi/.asoundrc` 
+
+8. Configure settings in `config.ini` 
+
+9. Run `python main.py` or `./main.py`
 

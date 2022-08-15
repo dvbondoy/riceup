@@ -6,23 +6,19 @@ A research about rice bug detection.
 `sudo apt update && sudo apt upgrade -y`
 
 2. Install pip3 and camera  
-`sudo apt install python3-pip -y`
-`sudo apt-get install python-picamera python3-picamera`
+`sudo apt install python3-pip python3-picamera -y` && `sudo pip3 install adafruit-python-shell`
 
 3. Download and install raspi-blinka  
-`wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py`  
-`sudo python3 raspi-blinka.py`  
+`wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py` && `sudo python3 raspi-blinka.py`
 
 4. Download and install i2smic  
-`wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2smic.py`  
-`sudo python i2smic.py`  
+`wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/i2smic.py` && `sudo python i2smic.py`  
 
 5. Download riceup  
 `git clone https://github.com/dvbondoy/riceup.git`  
 
 6. Install requirements  
-`cd riceup`  
-`pip3 install -r requirements.txt`
+`cd riceup` && `pip3 install -r requirements.txt`
 
 7. Copy 'asoundrc' to /home/pi and rename it to '.asoundrc'.
 `cp asoundrc /home/pi && mv /home/pi/asoundrc /home/pi/.asoundrc` 
@@ -30,4 +26,3 @@ A research about rice bug detection.
 8. Configure settings in `config.ini` 
 
 9. Run `python main.py` or `./main.py`
-

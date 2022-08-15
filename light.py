@@ -20,4 +20,4 @@ def off():
     #GPIO.output(pin, GPIO.HIGH)
     light.off()
 
-on()
+#on()

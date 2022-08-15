@@ -5,7 +5,7 @@ import mems
 import vibrator
 import fan
 import light
-#import camera
+import camera
 import sensor
 import configparser
 import time
@@ -31,8 +31,9 @@ if(config['DEVICES']['fan'] == 'on'):
     schedule.every(int(config['FAN']['interval_hr'])).hours.at(':'+config['FAN']['end_at']).do(fan.fan_off)
 
 if(config['DEVICES']['light'] == 'on'):
-    schedule.every(int(config['LIGHT']['interval_hr'])).hours.at(':'+config['LIGHT']['begin_at']).do(light.on)
-    schedule.every(int(config['LIGHT']['interval_hr'])).hours.at(':'+config['LIGHT']['end_at']).do(light.off)
+    light.on()
+#    schedule.every(int(config['LIGHT']['interval_hr'])).hours.at(':'+config['LIGHT']['begin_at']).do(light.on)
+#    schedule.every(int(config['LIGHT']['interval_hr'])).hours.at(':'+config['LIGHT']['end_at']).do(light.off)
 
 if(config['DEVICES']['camera'] == 'on'):
     schedule.every(int(config['CAMERA']['interval_hr'])).hours.at(':'+config['CAMERA']['begin_at']).do(camera.capture_vid)
@@ -42,9 +43,10 @@ def get_jobs():
     all_jobs = schedule.get_jobs()
     print(all_jobs)
 
-schedule.every(1).minutes.do(get_jobs)
+#schedule.every(1).minutes.do(get_jobs)
 
 if __name__ == '__main__':
+    get_jobs()
     while True:
         schedule.run_pending()
         time.sleep(1)
